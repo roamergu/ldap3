@@ -1,35 +1,31 @@
 ##############
-ldap3 Tutorial
+ldap3 教程
 ##############
 
 .. note::
-    In this tutorial we will access a public demo of `FreeIPA`_, available at https://ipa.demo1.freeipa.org (you must trust
-    its certificate on first login). FreeIPA is a fully featured identity management solution, but for the purposes of this
-    tutorial we're only interested in its LDAP server. Note that the demo server is periodically wiped, as described on the
-    `FreeIPA demo wiki page`_.
-
+    在这个教程里我们将要访问一个位于`FreeIPA`_, 的公共demo,可以在 https://ipa.demo1.freeipa.org 访问到这个demo，（第一次登录时你必须
+    信任他的证书），FreeIPA是一个全功能的身份验证解决方案，不过在本教程中我们感兴趣的目标是LDAPserver。要注意的是这个demo会周期性地
+    清空数据，就像在`FreeIPA demo wiki page`_.页面中描述的那样。
+    
     .. _FreeIPA: https://www.freeipa.org
     .. _FreeIPA demo wiki page: https://www.freeipa.org/page/Demo
 
 .. warning::
-    If you receive an ``LDAPSocketReceiveError: error receiving data`` exception the server could have
-    closed the connection abruptly. You can easily reopen it with the ``conn.bind()`` method.
+    如果你收到一个``LDAPSocketReceiveError: error receiving data`` 异常， 说明服务器中断了与你的连接。. 你可以使用 ``conn.bind()`` 方法来重新打开。
 
-What LDAP is not
+LDAP 不是什么。。。
 ================
 
-If you're reading this tutorial I assume that you already know what LDAP is, or at least have a rough idea of it. If you really
-don't know anything about LDAP after reading this tutorial you should be able to access an LDAP compliant server and use it without bothering with
-the many glitches of the LDAP protocol.
+如果你正在阅读本教程，我假定你已经知道了什么是LDAP，或者至少对LDAP有一个粗略的了解。如果你真的对LDAP一无所知，，在阅读完本教程之后你应该能够访问一个LDAP兼容服务器，并且正确地使用LDAP协议。
 
-I'd rather want to be sure that you are aware of what LDAP **is not**:
+ 我希望你明确知道LDAP如下的 **不是**：
 
-- is not a server
-- is not a database
-- is not a network service
-- is not an authentication procedure
-- is not a user/password repository
-- is not an open source neither a closed source product
+- 它不是一个服务
+- 它不是一个数据库
+- 它不是一个网络服务
+- 它不是一个身份验证过程
+- 它不是一个用户名、密码存储库
+- 它不是一个开源产品也不是一个闭源产品
 
 It's important to know what LDAP is not because people usually call "LDAP" a peculiar part of what they use of the
 *Lightweight Directory Access Protocol*. LDAP is a *protocol* and as other 'trailing-P' words in the Internet
