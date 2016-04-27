@@ -1,21 +1,23 @@
-The ldap3 project
+ldap3 简介
 #################
+
+ldap3 是一个严格遵守RFC4510 LDAPV3标准的，纯python实现的库。整个ldap3已经完全从头编写，无论是使用Python 2, Python 3, PyPy, PyPy3 还是 Nuikta ，只要他们运行的系统能够通过Python解释器和Python标准库访问网络，ldap3就能在这些系统上正常运行。
 
 ldap3 is a strictly RFC 4510 conforming LDAP v3 pure Python client library. The whole ldap3 library has been **written from scratch**
 and the **same codebase works with Python 2, Python 3, PyPy, PyPy3 and Nuikta** on any system where it can gain access to
 the network via a Python interpreter and the Python Standard Library.
 
 
-License
+授权
 -------
-
+ldap3库 是基于 **LGPL v3 license** (http://www.gnu.org/licenses/lgpl-3.0.html) 发布的开源软件，这意味着你可以使用ldap3开发任意应用，无论是私有软件还是开源软件，你也可以复制、分发和修改ldap3,修改后的ldap3的描述和授权要在LGPL协议下免费。基于ldap3的衍生库必须在LGPL下授权，但使用了ldap3的应用软件则不必如此
 The ldap3 library is open source software released under the **LGPL v3 license** (http://www.gnu.org/licenses/lgpl-3.0.html).
 This means that you can use the ldap3 library in any application (either open or proprietary). You can also copy, distribute and modify
 the ldap3 library provided that modifications are described and licensed for free under LGPL.
 Derivatives works of ldap3 can only be redistributed under LGPL, but applications that use the library don't have to be.
 
 
-RFCs Compliance
+RFCs 
 ---------------
 
 The ldap3 library strictly follows the latest (as of 2015) RFCs describing the LDAP v3 protocol:
